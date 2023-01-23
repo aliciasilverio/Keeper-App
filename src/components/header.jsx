@@ -1,6 +1,7 @@
-import Login from "../users/Login";
 import React, { useState } from 'react';
-import Welcome from "../users/Welcome";
+import Login from "../routes/Login";
+import Welcome from "../routes/SignUp";
+import { NavLink } from 'react-router-dom'
 
 import 
 { BrowserRouter as Router, Routes, Route} 
@@ -15,26 +16,22 @@ function Header() {
     //   }
 
 return (
+    
     <header>
         <h1>Keeper</h1>
-
-        <a href=
-            {<Router>
-                <Routes>
-                    {Login}<Route exact path='../users/Login' element={<Login/>} />
-                </Routes>
-            </Router>}>
-                Log In
-        </a>
-
-        <a href=
-            {<Router>
-                <Routes>
-                    {Welcome}<Route exact path='../users/Welcome' element={<Welcome/>} />
-                </Routes>
-            </Router>}>
-                Sign Up
-        </a>
+        <div className="header-class">
+        <ul>
+            <li>
+                <Link to="/">Home</Link>
+            </li>
+            <li>
+                <Link to="/blogs">Blogs</Link>
+            </li>
+            <li>
+                <Link to="/contact">Contact</Link>
+            </li>
+      </ul>
+        </div>
     </header>
 )};
 

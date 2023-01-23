@@ -3,6 +3,10 @@ import Header from "./Header";
 import Footer from "./Footer";
 import Note from "./Note";
 import CreateArea from "./CreateArea";
+import Login from "../routes/Login";
+import SignUp from "../routes/SignUp";
+import { BrowserRouter as Router, Routes, Route}
+    from 'react-router-dom';
 
 
 function App() {
@@ -23,7 +27,14 @@ function App() {
   }
 
   return (
-    <div>
+    <div className="App">
+      {/* <Router>
+          <Routes>
+          <Route exact path='/' element={<Home />} />
+          <Route path='/Login' element={<Login/>} />
+          <Route path='/SignUp' element={<SignUp/>} />
+        </Routes>
+    </Router> */}
       <Header/>
       <CreateArea onAdd={addNote} />
       {notes.map((noteItem, index) => {
